@@ -20,13 +20,9 @@ function generateAllPalindromicDecompositions(
     for (let i = 1; i <= str.length; i++) {
       const subStr = str.slice(0, i);
       if (checkPalindrome(subStr)) {
-        console.log({ subStr });
         decompositionsSoFar.push(subStr);
-        console.log({ decompositionsSoFar });
         generateAllPalindromicDecompositions(str.slice(i), decompositionsSoFar, result);
         decompositionsSoFar.pop();
-      } else {
-        console.log({ nonSubStr: subStr });
       }
     }
   }
